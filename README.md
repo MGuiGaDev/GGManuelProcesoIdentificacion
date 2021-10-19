@@ -1,6 +1,18 @@
-# EJERCICIO: LOGIN
+![cabecera](GGManuelProcesoIdentificacion/imagenes/cabecera.PNG)
 
-# EN CONSTRUCCIÓN
+
+<hr style="height: 5px; background: #24292F;">
+
+# Contenidos
+
+1. [Introducción](#introduccion)
+2. [Herramientas](#herramientas)
+3. [Diagrama de flujo](#diagrama)
+4. [Documentos](#documentos)
+5. [Interconexiones]( #interconexiones)
+6. [Estado de los archivos](#estado)
+
+<hr style="height: 5px; background: #24292F;"><a name="introduccion"></a>
 
 ## NOMBRE DE USUARIO: Joaquina Chamorro
 ## CONTRASEÑA: 1111
@@ -15,13 +27,19 @@ Un concepto relacionado: DASHBOARD
 >
 > Tomado de [www.justinmind.com](https://www.justinmind.com/blog/dashboard-design-best-practices-ux-ui/#:~:text=At%20its%20simplest%2C%20a%20dashboard,homepage%2C%20especially%20for%20power%20users.)
 
+
+<hr style="height: 5px; background: #24292F;"><a name="herramientas"></a>
+
 # 2. Herramientas
 
+![(imagenesReadme/java.svg)](https://img.shields.io/badge/code-Java-informational?style=flat&logo=java&logoColor=white&color=2bbc8a)  ![(imagenesReadme/javascript.svg)](https://img.shields.io/badge/code-JavaScript-informational?style=flat&logo=javascript&logoColor=white&color=2bbc8a) ![(imagenesReadme/css3.svg)](https://img.shields.io/badge/code-CSS3-informational?style=flat&logo=css3&logoColor=white&color=2bbc8a)  ![(imagenesReadme/html5.svg)](https://img.shields.io/badge/code-HTML5-informational?style=flat&logo=html5&logoColor=white&color=2bbc8a)  ![(imagenesReadme/apachenetbeanside.svg)](https://img.shields.io/badge/ide-NetBeans-informational?style=flat&logo=apachenetbeanside&logoColor=white&color=2bbc8a) ![(imagenesReadme/apachetomcat.svg)](https://img.shields.io/badge/server-TomCat-informational?style=flat&logo=apachetomcat&logoColor=white&color=2bbc8a)
 
+<hr style="height: 5px; background: #24292F;"><a name="diagrama"></a>
 
 # 3. Diagrama de flujo
 
 
+<hr style="height: 5px; background: #24292F;"><a name="documentos"></a>
 
 # 4. Documentos
 
@@ -44,6 +62,9 @@ Un concepto relacionado: DASHBOARD
 - ``Pedidos.java (name = "Pedidos" urlPatterns="/pedidos")`` - En nuestro caso, es responsable de dos acciones:
   - Comunicar la vista ``menu.jsp`` con la vista ``pedidos.jsp``.
   - Producir los datos de usuario y de pedidos que van a mostrarse en la vista ``pedidos.jsp``.
+
+
+<hr style="height: 5px; background: #24292F;"><a name="interconexiones"></a>
 
 # 5. Interconexiones
 
@@ -176,4 +197,6 @@ request.getSession().invalidate();
 String pedidosU = "<ul><li>Edredón metálico [1]</li><li>Felpudo de cristal [1]</li><li>Cenicero de papel [2]</li>";
 request.getSession().setAttribute("pedidosUsuario", pedidosU);
 ```
+
+<hr style="height: 5px; background: #24292F;"><a name="estado"></a>
 
