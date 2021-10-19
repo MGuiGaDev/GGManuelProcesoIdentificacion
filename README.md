@@ -39,7 +39,7 @@ Un concepto relacionado: DASHBOARD
 # 3. Diagrama de flujo
 
 
-![DF_Login ](imagenes/DF_Login .png)
+![diagrama](imagenes/diagrama.png)
 
 
 
