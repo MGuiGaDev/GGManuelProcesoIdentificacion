@@ -1,4 +1,4 @@
-![cabecera](GGManuelProcesoIdentificacion/imagenes/cabecera.PNG)
+![cabecera](imagenes/cabecera.PNG)
 
 
 <hr style="height: 5px; background: #24292F;">
