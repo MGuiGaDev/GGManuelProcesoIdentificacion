@@ -32,14 +32,14 @@ Un concepto relacionado: DASHBOARD
 
 ### Controladores
 
-- ``Controlador.java (name = "Controlador" urlPatterns="/login")`` - En nuestro caso, es responsable de cuatro acciones: 
+- ``Controlador.java (name = "Controlador" urlPatterns="/login")`` - En nuestro caso, es responsable de tres acciones: 
   - Controlar el direccionamiento directo a la vista ``login.jsp``.
-  - Producir mensajes informativos en la vista ``login.jsp`` en caso de haber algún error al introducir los campos.
   - Obtener los datos del usuario y mostrarlos en ``login.jsp`` , en caso de que este seleccione la opción ser recordado.
   - Hacer efectiva la opción ``cerrar sesión`` disponible en las vistas ``menu.jsp`` y ``pedidos.jsp``.
-- ``Menu.java (name = "Menu" urlPatterns="/menu")`` - En nuestro caso, es responsable de dos acciones:
-  - Controla el acceso a la vista ``menu.jsp``. En caso de existir errores en el proceso de login, no permitirá dicho acceso.
-  - Controla el flujo de datos en la aplicación entre la vista ``login.jsp`` y la vista ``menu.jsp``. Generando aquellos datos que sean requeridos para las diferentes vistas.
+- ``Menu.java (name = "Menu" urlPatterns="/menu")`` - En nuestro caso, es responsable de tres acciones:
+  - Controlar el acceso a la vista ``menu.jsp``. En caso de existir errores en el proceso de login, no permitirá dicho acceso.
+  - Producir mensajes informativos en la vista ``login.jsp`` en caso de haber algún error al introducir los campos.
+  - Controlar el flujo de datos en la aplicación entre la vista ``login.jsp`` y la vista ``menu.jsp``. Generando aquellos datos que sean requeridos para las diferentes vistas.
 - ``Pedidos.java (name = "Pedidos" urlPatterns="/pedidos")`` - En nuestro caso, es responsable de dos acciones:
   - Comunicar la vista ``menu.jsp`` con la vista ``pedidos.jsp``.
   - Producir los datos de usuario y de pedidos que van a mostrarse en la vista ``pedidos.jsp``.
@@ -140,7 +140,39 @@ else if (!request.getParameter("pass").equals(password)) {
 }...           
 ```
 
+- ``Controlador.java`` - Recoge el nombre de usuario y lo imprime en el formulario (en caso de estar seleccionado el ``checkbox`` "recordarme") y cierra sesión.
 
+*Nombre de usuario*
 
+```java
+//MÉTODO DOPOST()
+Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie co : cookies) {
+                if (co.getName().equals("datosUsuario")) {
+                    request.setAttribute("nombreUsuario", URLDecoder.decode(co.getValue(), "utf8"));
+                    co.setValue("");
+                    co.setMaxAge(0);
+                    response.addCookie(co);
+                }
+            }
+        }
+```
 
+*Cierre de sesión*
+
+```java
+//MÉTODO DOPOST()
+request.getSession().invalidate();
+```
+
+- ``Pedidos.java`` - De este archivo destacaremos la creación de atributos de sesión para ser transferidos a la vista ``pedidos.jsp``.
+
+*Creación de atributo de sesión*
+
+```java
+//MÉTODO DOPOST()
+String pedidosU = "<ul><li>Edredón metálico [1]</li><li>Felpudo de cristal [1]</li><li>Cenicero de papel [2]</li>";
+request.getSession().setAttribute("pedidosUsuario", pedidosU);
+```
 
