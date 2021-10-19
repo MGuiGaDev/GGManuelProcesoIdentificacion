@@ -2,7 +2,8 @@
 
 # EN CONSTRUCCIÓN
 
-
+## NOMBRE DE USUARIO: Joaquina Chamorro
+## CONTRASEÑA: 1111
 
 # 1. Introducción
 
